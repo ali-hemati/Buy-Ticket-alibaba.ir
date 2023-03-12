@@ -1,16 +1,17 @@
-# This is a sample Python script.
+# import requests
+url = 'https://www.alibaba.ir/bus/THR-IFN?departing=1401-12-26'
+# data = requests.get(url)
+# print(data.text)
+##################################
+# from requests_html import HTMLSession
+#
+# session = HTMLSession()
+# r = session.get(url)
+# r.html.render()
+from selenium import webdriver
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+DRIVER_PATH = 'C:\\Users\\AmirHBakan\\PycharmProjects\\Bilit\\chromedriver.exe'
+driver = webdriver.Chrome(executable_path=DRIVER_PATH)
+driver.get(url)
+test = driver.page_source
+print(test)
